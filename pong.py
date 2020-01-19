@@ -1,6 +1,3 @@
-# Simple Pong in Python 3 for Beginners
-# By @TokyoEdTech
-
 import turtle
 import os
 
@@ -80,8 +77,8 @@ wn.onkeypress(paddle_a_down, "s")
 wn.onkeypress(paddle_b_up, "Up")
 wn.onkeypress(paddle_b_down, "Down")
 
-#audio file
-bounce = '/Users/jackylam/Documents/GitHub/pong-game/bounce.wav'
+#audio file (too laggy)
+#bounce = '/Users/jackylam/Documents/GitHub/pong-game/bounce.wav'
 
 # Main game loop
 while True:
@@ -97,12 +94,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        os.system(f'afplay {bounce}')
+        #os.system(f'afplay {bounce}')
 
     elif ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        os.system(f'afplay {bounce}')
+        #os.system(f'afplay {bounce}')
 
     # Left and right
     if ball.xcor() > 350:
@@ -122,8 +119,8 @@ while True:
     # Paddle and ball collisions
     if ball.xcor() < -340 and ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50:
         ball.dx *= -1
-        os.system(f'afplay {bounce}')
+        #os.system(f'afplay {bounce}')
 
     elif ball.xcor() > 340 and ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50:
         ball.dx *= -1
-        os.system(f'afplay {bounce}')
+        #os.system(f'afplay {bounce}')
